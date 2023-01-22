@@ -39,3 +39,5 @@ D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSe
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormProducts.FormUpdateProducts.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormProducts.FormAddProducts.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormProducts.FormProducts.resources
+D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.MainForm.resources
+D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormLogin.resources

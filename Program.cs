@@ -19,7 +19,13 @@ namespace TokoSepatuApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormProducts());
+
+            var formLogin = new FormLogin();
+
+            if (formLogin.ShowDialog() == DialogResult.OK)
+                Application.Run(new MainForm());
+            else
+                Application.Exit();
         }
     }
 }
