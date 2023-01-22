@@ -41,7 +41,7 @@ namespace TokoSepatuApp.Controller
 
             if (!string.IsNullOrEmpty(products.File))
             {
-                string saveDirectory = @"D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\Images\";
+                string saveDirectory = Directory.GetCurrentDirectory() +  @"\Images\";
 
                 if (!Directory.Exists(saveDirectory))
                 {
@@ -50,6 +50,7 @@ namespace TokoSepatuApp.Controller
 
                 string fileName = Path.GetFileName(products.File);
                 string fileSavePath = Path.Combine(saveDirectory, fileName);
+
                 File.Copy(products.File, fileSavePath, true);
 
                 products.Photo = fileSavePath;
@@ -97,6 +98,22 @@ namespace TokoSepatuApp.Controller
                 return 0;
             }
 
+            if (!string.IsNullOrEmpty(products.File))
+            {
+                string saveDirectory = Directory.GetCurrentDirectory() + @"\Images\";
+
+                if (!Directory.Exists(saveDirectory))
+                {
+                    Directory.CreateDirectory(saveDirectory);
+                }
+
+                string fileName = Path.GetFileName(products.File);
+                string fileSavePath = Path.Combine(saveDirectory, fileName);
+
+                File.Copy(products.File, fileSavePath, true);
+
+                products.Photo = fileSavePath;
+            }
 
             using (DbContext context = new DbContext())
             {

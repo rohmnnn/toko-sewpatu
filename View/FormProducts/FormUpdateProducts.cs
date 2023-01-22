@@ -19,49 +19,38 @@ namespace TokoSepatuApp.View.FormProducts
         public event UpdateEventHandler onUpdate;
 
         private List<Brands> listOfBrands = new List<Brands>();
-        private BrandsController controller;
+        bool imageChange = false;
 
         public FormUpdateProducts()
         {
+            BrandsController controller = new BrandsController();
             InitializeComponent();
+
             comboBoxBrand.Items.Clear();
-            comboBoxBrand.SelectedIndex = 0;
-            
+            comboBoxBrand.DisplayMember = "Text";
+            comboBoxBrand.ValueMember = "Value";
+
             listOfBrands = controller.ReadAll();
+            List<Object> items = new List<Object>();
 
             foreach (var brand in listOfBrands)
             {
-                var noUrut = comboBoxBrand.Items.Count + 1;
-                var item = new ListViewItem(noUrut.ToString());
-
-                item.Tag = brand.Id;
-                item.SubItems.Add(brand.Name);
-
-                comboBoxBrand.Items.Add(item);
+                items.Add(new { Text = brand.Name, Value = brand.Id });
             }
+
+            comboBoxBrand.DataSource = items;
         }
 
         public FormUpdateProducts(Products products) : this()
         {
-            InitializeComponent();
-            comboBoxBrand.Items.Clear();
-            comboBoxBrand.SelectedIndex = 0;
-
-            listOfBrands = controller.ReadAll();
-
-            foreach (var brand in listOfBrands)
-            {
-                var noUrut = comboBoxBrand.Items.Count + 1;
-                var item = new ListViewItem(noUrut.ToString());
-
-                item.Tag = brand.Id;
-                item.SubItems.Add(brand.Name);
-
-                comboBoxBrand.Items.Add(item);
-            }
-
+            comboBoxBrand.Text = products.Brand;
             textName.Text = products.Name;
             textHarga.Text = products.Price.ToString();
+            textPhoto.Text = products.Photo;
+            if (!string.IsNullOrEmpty(products.Photo))
+            {
+                pictureBox.Image = new Bitmap(products.Photo);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -72,19 +61,46 @@ namespace TokoSepatuApp.View.FormProducts
         private void button1_Click(object sender, EventArgs e)
         {
             var products = new Products();
-
             products.Name = textName.Text;
             products.Price = Convert.ToInt32(textHarga.Text);
-            products.BrandId = comboBoxBrand.SelectedIndex;
-            products.Photo = textPhoto.Text;
+            products.BrandId = Convert.ToInt32(comboBoxBrand.SelectedValue.ToString());
 
-            
+            if (imageChange)
+            {
+                products.File = textPhoto.Text;
+            }
 
             onUpdate(products);
 
             textName.Clear();
             textHarga.Clear();
             textPhoto.Clear();
+
+            this.Close();
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Cari Foto",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp",
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                imageChange = true;
+                textPhoto.Text = openFileDialog.FileName;
+                pictureBox.Image = new Bitmap(openFileDialog.FileName);
+            }
         }
     }
 }
