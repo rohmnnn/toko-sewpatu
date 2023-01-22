@@ -23,7 +23,7 @@ namespace TokoSepatuApp.Model.Repository
             List<Customers> list = new List<Customers>();
             try
             {
-                string sql = @"select id, name, email, phone, address from customers order by name";
+                string sql = @"select id, name, address from customers order by name";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
                     using (SQLiteDataReader dtr = cmd.ExecuteReader())

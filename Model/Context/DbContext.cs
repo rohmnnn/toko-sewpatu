@@ -22,7 +22,7 @@ namespace TokoSepatuApp.Model.Context
             SQLiteConnection conn = null;
             try 
             {
-                string dbName = @"D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\Database\db_tokosepatu.sqlite";
+                string dbName = @"D:\toko-sewpatu\Database\db_tokosepatu.sqlite";
 
                 string connectionString = string.Format("DataSource={0}; FailIfMissing = True", dbName);
                 conn = new SQLiteConnection(connectionString); 

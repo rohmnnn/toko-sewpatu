@@ -140,6 +140,17 @@ namespace TokoSepatuApp.Controller
             return list;
         }
 
+        public List<Products> ReadAllSizes()
+        {
+            List<Products> list = new List<Products>();
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProductsRepository(context);
+                list = _repository.ReadAllSizes();
+            }
+            return list;
+        }
+
         public List<Products> Search(string param)
         {
             List<Products> list = new List<Products>();
@@ -149,6 +160,19 @@ namespace TokoSepatuApp.Controller
                 list = _repository.Search(param);
             }
             return list;
+        }
+
+        public int TotalOrder(int id, int amount)
+        {
+            // detail price product
+            int result = 0;
+            using (DbContext context = new DbContext())
+            {
+                _repository = new ProductsRepository(context);
+                int price = _repository.DetailPrice(id);
+                result = price * amount;
+            }
+            return result;
         }
     }
 }

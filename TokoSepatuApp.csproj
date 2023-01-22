@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Controller\CustomersController.cs" />
     <Compile Include="Controller\BrandsController.cs" />
+    <Compile Include="Controller\OrdersController.cs" />
     <Compile Include="Controller\ProductsController.cs" />
     <Compile Include="Controller\UsersController.cs" />
     <Compile Include="Form1.cs">
@@ -103,6 +104,7 @@
     <Compile Include="Model\Entity\Users.cs" />
     <Compile Include="Model\Repository\CustomersRepository.cs" />
     <Compile Include="Model\Repository\BrandsRepository.cs" />
+    <Compile Include="Model\Repository\OrdersRepository.cs" />
     <Compile Include="Model\Repository\ProductsRepository.cs" />
     <Compile Include="Model\Repository\UsersRepository.cs" />
     <Compile Include="Program.cs" />
@@ -124,6 +126,18 @@
     </Compile>
     <Compile Include="View\FormBrands\FormBrands.Designer.cs">
       <DependentUpon>FormBrands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormOrders\FormAddOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormOrders\FormAddOrders.Designer.cs">
+      <DependentUpon>FormAddOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormOrders\FormOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormOrders\FormOrders.Designer.cs">
+      <DependentUpon>FormOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormProducts\FormUpdateProducts.cs">
       <SubType>Form</SubType>
@@ -178,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormBrands\FormBrands.resx">
       <DependentUpon>FormBrands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormOrders\FormAddOrders.resx">
+      <DependentUpon>FormAddOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormOrders\FormOrders.resx">
+      <DependentUpon>FormOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormProducts\FormUpdateProducts.resx">
       <DependentUpon>FormUpdateProducts.cs</DependentUpon>

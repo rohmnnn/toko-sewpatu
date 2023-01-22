@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TokoSepatuApp.View;
 using TokoSepatuApp.View.FormCustomers;
+using TokoSepatuApp.View.FormOrders;
 using TokoSepatuApp.View.FormProducts;
 
 namespace TokoSepatuApp
@@ -19,7 +20,7 @@ namespace TokoSepatuApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormProducts());
+            Application.Run(new FormOrders());
         }
     }
 }
