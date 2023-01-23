@@ -16,7 +16,7 @@ namespace TokoSepatuApp.View.FormOrders
 {
     public partial class FormAddOrders : Form
     {
-        public delegate void CreateEventHandler(Orders orders);
+        public delegate void CreateEventHandler(Orders orders, OrderDetails orderDetails);
         public event CreateEventHandler onCreate;
 
         private List<Products> listOfProducts = new List<Products>();
@@ -68,6 +68,7 @@ namespace TokoSepatuApp.View.FormOrders
             var orders = new Orders();
             var orderDetail = new OrderDetails();
 
+
             orders.CustomerId = Convert.ToInt32(comboBoxCustomer.SelectedValue.ToString());
             orderDetail.ProductIdSize = Convert.ToInt32(comboBoxProduct.SelectedValue.ToString());
             orderDetail.Amount = Convert.ToInt32(textHarga.Text);
@@ -77,10 +78,14 @@ namespace TokoSepatuApp.View.FormOrders
             int total = 0;
             total = controller.TotalOrder(orderDetail.ProductIdSize, orderDetail.Amount);
 
+            orders.Total = Convert.ToInt32(total);
+            orderDetail.Total = Convert.ToInt32(total);
+
+
             var konfirmasi = MessageBox.Show("Total Harga :  Rp." + total, "Konfirmasi Pembayaran", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (konfirmasi == DialogResult.Yes)
             {
-                onCreate(orders);
+                onCreate(orders, orderDetail);
 
             } else // data belum dipilih
             {

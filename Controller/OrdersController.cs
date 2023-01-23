@@ -14,12 +14,26 @@ namespace TokoSepatuApp.Controller
     {
         private OrdersRepository _repository;
 
-        public int Create(Orders orders)
+        public int Create(Orders orders, OrderDetails orderDetails)
         {
             int result = 0;
-            if (string.IsNullOrEmpty(orders.OrderNo))
+            if (string.IsNullOrEmpty(orders.CustomerId.ToString()))
             {
-                MessageBox.Show("Nama wajib diisi!", "Peringatan",
+                MessageBox.Show("Nama Customer wajib diisi!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+
+            if (string.IsNullOrEmpty(orderDetails.ProductIdSize.ToString()))
+            {
+                MessageBox.Show("Product wajib diisi!", "Peringatan",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+
+            if (string.IsNullOrEmpty(orderDetails.Amount.ToString()))
+            {
+                MessageBox.Show("Jumlah Item Product wajib diisi!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return 0;
             }
@@ -27,7 +41,7 @@ namespace TokoSepatuApp.Controller
             using (DbContext context = new DbContext())
             {
                 _repository = new OrdersRepository(context);
-                result = _repository.Create(orders);
+                result = _repository.Create(orders, orderDetails);
             }
 
             if (result > 0)

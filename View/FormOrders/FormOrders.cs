@@ -43,9 +43,6 @@ namespace TokoSepatuApp.View.FormOrders
                 item.SubItems.Add(order.OrderNo);
                 item.SubItems.Add(order.Date.ToString());
                 item.SubItems.Add(order.Total.ToString("C", CultureInfo.CurrentCulture));
-                item.ImageKey = order.Id.ToString();
-                item.ImageIndex = noUrut - 1;
-
                 listView.Items.Add(item);
             }
 
@@ -57,9 +54,9 @@ namespace TokoSepatuApp.View.FormOrders
             listView.FullRowSelect = true;
             listView.GridLines = true;
             listView.Columns.Add("No.", 35, HorizontalAlignment.Center);
-            listView.Columns.Add("Nama", 250, HorizontalAlignment.Left);
-            listView.Columns.Add("Brand", 120, HorizontalAlignment.Left);
-            listView.Columns.Add("Price", 120, HorizontalAlignment.Left);
+            listView.Columns.Add("No Order", 300, HorizontalAlignment.Left);
+            listView.Columns.Add("Tanggal", 280, HorizontalAlignment.Left);
+            listView.Columns.Add("Total", 120, HorizontalAlignment.Left);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -70,9 +67,9 @@ namespace TokoSepatuApp.View.FormOrders
             formAddOrder.ShowDialog();
         }
 
-        private void onCreate(Orders users)
+        private void onCreate(Orders orders, OrderDetails orderDetails)
         {
-            controller.Create(users);
+            controller.Create(orders, orderDetails);
             LoadOrders();
         }
 
@@ -89,7 +86,7 @@ namespace TokoSepatuApp.View.FormOrders
                 item.Tag = order.Id;
                 item.SubItems.Add(order.OrderNo);
                 item.SubItems.Add(order.Date.ToString());
-                item.SubItems.Add(String.Format(CultureInfo.CreateSpecificCulture("id-id"), "{0:N}", order.Total.ToString()));
+                item.SubItems.Add(order.Total.ToString("C", CultureInfo.CurrentCulture));
 
                 listView.Items.Add(item);
             }

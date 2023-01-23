@@ -98,7 +98,13 @@ namespace TokoSepatuApp.Model.Repository
                 cmd.Parameters.AddWithValue("@id", id);
                 try
                 {
-                    result = cmd.ExecuteNonQuery();
+                    using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            result = Convert.ToInt32(dtr["price"]);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
