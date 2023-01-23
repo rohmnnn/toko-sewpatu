@@ -141,6 +141,8 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.title);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormBrands";
             this.Text = "Form Brands";
             this.ResumeLayout(false);

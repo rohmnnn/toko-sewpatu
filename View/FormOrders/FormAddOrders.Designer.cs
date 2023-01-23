@@ -41,10 +41,9 @@
             // 
             // btnSimpan
             // 
-            this.btnSimpan.Location = new System.Drawing.Point(16, 374);
-            this.btnSimpan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSimpan.Location = new System.Drawing.Point(12, 304);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(100, 28);
+            this.btnSimpan.Size = new System.Drawing.Size(75, 23);
             this.btnSimpan.TabIndex = 0;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = true;
@@ -52,10 +51,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(124, 374);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(93, 304);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -64,20 +62,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 71);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Product";
             // 
             // comboBoxProduct
             // 
             this.comboBoxProduct.FormattingEnabled = true;
-            this.comboBoxProduct.Location = new System.Drawing.Point(16, 91);
-            this.comboBoxProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxProduct.Location = new System.Drawing.Point(12, 74);
             this.comboBoxProduct.Name = "comboBoxProduct";
-            this.comboBoxProduct.Size = new System.Drawing.Size(273, 24);
+            this.comboBoxProduct.Size = new System.Drawing.Size(206, 21);
             this.comboBoxProduct.TabIndex = 10;
             // 
             // openFileDialog1
@@ -87,45 +83,41 @@
             // comboBoxCustomer
             // 
             this.comboBoxCustomer.FormattingEnabled = true;
-            this.comboBoxCustomer.Location = new System.Drawing.Point(16, 40);
-            this.comboBoxCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCustomer.Location = new System.Drawing.Point(12, 32);
             this.comboBoxCustomer.Name = "comboBoxCustomer";
-            this.comboBoxCustomer.Size = new System.Drawing.Size(273, 24);
+            this.comboBoxCustomer.Size = new System.Drawing.Size(206, 21);
             this.comboBoxCustomer.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Customer";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 16);
+            this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Amount of Item";
             // 
             // textHarga
             // 
-            this.textHarga.Location = new System.Drawing.Point(16, 149);
-            this.textHarga.Margin = new System.Windows.Forms.Padding(4);
+            this.textHarga.Location = new System.Drawing.Point(12, 121);
             this.textHarga.Name = "textHarga";
-            this.textHarga.Size = new System.Drawing.Size(273, 22);
+            this.textHarga.Size = new System.Drawing.Size(206, 20);
             this.textHarga.TabIndex = 7;
             // 
             // FormAddOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 429);
+            this.ClientSize = new System.Drawing.Size(351, 349);
             this.Controls.Add(this.comboBoxCustomer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProduct);
@@ -134,7 +126,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSimpan);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAddOrders";
             this.Text = "Form Add Products";
             this.ResumeLayout(false);

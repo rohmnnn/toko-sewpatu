@@ -86,6 +86,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Penjualan";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -155,6 +156,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Toko Sepatu App";
             this.ResumeLayout(false);

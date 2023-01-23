@@ -16,6 +16,8 @@ namespace TokoSepatuApp.View
         public FormLogin()
         {
             InitializeComponent();
+            textEmail.Text = "admin@gmail.com";
+            textPassword.Text = "admin";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

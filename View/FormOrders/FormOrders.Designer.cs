@@ -56,29 +56,26 @@
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.title.Location = new System.Drawing.Point(16, 11);
-            this.title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.title.Location = new System.Drawing.Point(12, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(134, 49);
+            this.title.Size = new System.Drawing.Size(107, 39);
             this.title.TabIndex = 2;
             this.title.Text = "Orders";
             // 
             // listView
             // 
             this.listView.HideSelection = false;
-            this.listView.Location = new System.Drawing.Point(25, 95);
-            this.listView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView.Location = new System.Drawing.Point(19, 77);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(1000, 403);
+            this.listView.Size = new System.Drawing.Size(751, 328);
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(25, 511);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(19, 415);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -86,18 +83,16 @@
             // 
             // textCari
             // 
-            this.textCari.Location = new System.Drawing.Point(25, 63);
-            this.textCari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCari.Location = new System.Drawing.Point(19, 51);
             this.textCari.Name = "textCari";
-            this.textCari.Size = new System.Drawing.Size(892, 22);
+            this.textCari.Size = new System.Drawing.Size(670, 20);
             this.textCari.TabIndex = 7;
             // 
             // btnCari
             // 
-            this.btnCari.Location = new System.Drawing.Point(927, 59);
-            this.btnCari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCari.Location = new System.Drawing.Point(695, 48);
             this.btnCari.Name = "btnCari";
-            this.btnCari.Size = new System.Drawing.Size(100, 28);
+            this.btnCari.Size = new System.Drawing.Size(75, 23);
             this.btnCari.TabIndex = 8;
             this.btnCari.Text = "Cari";
             this.btnCari.UseVisualStyleBackColor = true;
@@ -105,10 +100,9 @@
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(143, 511);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShow.Location = new System.Drawing.Point(107, 415);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(100, 28);
+            this.btnShow.Size = new System.Drawing.Size(75, 23);
             this.btnShow.TabIndex = 9;
             this.btnShow.Text = "Tampilkan Semua";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -116,16 +110,17 @@
             // 
             // FormOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.textCari);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.title);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormOrders";
             this.Text = "Form Orders";
             this.ResumeLayout(false);

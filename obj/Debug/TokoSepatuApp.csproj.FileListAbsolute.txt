@@ -33,7 +33,6 @@ D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\bin\Debug\System
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormUsers.FormUpdateUsers.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormBrands.FormBrands.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormBrands.FormAddUpdateBrands.resources
-D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormUsers.FormAddUpdateBrands.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormUsers.FormUsers.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormCustomers.FormCustomers.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormProducts.FormUpdateProducts.resources
@@ -41,3 +40,6 @@ D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSe
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormProducts.FormProducts.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.MainForm.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormLogin.resources
+D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormOrders.FormAddOrders.resources
+D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormOrders.FormOrders.resources
+D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormUsers.FormAddUsers.resources

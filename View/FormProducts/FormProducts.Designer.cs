@@ -162,15 +162,16 @@
             this.Brand.HeaderText = "Brand";
             this.Brand.Name = "Brand";
             this.Brand.ReadOnly = true;
-            this.Brand.Width = 320;
+            this.Brand.Width = 250;
             // 
             // Foto
             // 
             this.Foto.HeaderText = "Foto";
             this.Foto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Foto.MinimumWidth = 100;
+            this.Foto.MinimumWidth = 170;
             this.Foto.Name = "Foto";
             this.Foto.ReadOnly = true;
+            this.Foto.Width = 170;
             // 
             // FormProducts
             // 
@@ -185,6 +186,8 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.title);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormProducts";
             this.Text = "Form Products";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

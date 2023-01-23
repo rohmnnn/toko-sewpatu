@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TokoSepatuApp.View.FormBrands;
 using TokoSepatuApp.View.FormCustomers;
+using TokoSepatuApp.View.FormOrders;
 using TokoSepatuApp.View.FormProducts;
 using TokoSepatuApp.View.FormUsers;
 
@@ -43,6 +44,12 @@ namespace TokoSepatuApp
         {
             var formBrand = new FormBrands();
             formBrand.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var formOrders = new FormOrders();
+            formOrders.ShowDialog();
         }
     }
 }

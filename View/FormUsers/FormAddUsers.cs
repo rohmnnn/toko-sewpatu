@@ -12,11 +12,11 @@ using TokoSepatuApp.Model.Entity;
 
 namespace TokoSepatuApp.View.FormUsers
 {
-    public partial class FormAddUpdateBrands : Form
+    public partial class FormAddUsers : Form
     {
         public delegate void CreateEventHandler(Users users);
         public event CreateEventHandler onCreate;
-        public FormAddUpdateBrands()
+        public FormAddUsers()
         {
             InitializeComponent();
         }
