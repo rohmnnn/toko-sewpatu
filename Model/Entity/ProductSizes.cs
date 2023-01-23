@@ -10,8 +10,9 @@ namespace TokoSepatuApp.Model.Entity
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
+        public string Product { get; set; }
         public int Size { get; set; }
-        public bool IsAvaliable { get; set; }
+        public int IsAvaliable { get; set; }
         public int Stock { get; set; }
     }
 }
