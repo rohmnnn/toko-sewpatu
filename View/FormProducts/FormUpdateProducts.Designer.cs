@@ -170,6 +170,8 @@
             this.Controls.Add(this.textName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSimpan);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormUpdateProducts";
             this.Text = "Form Update Products";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

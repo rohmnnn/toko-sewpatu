@@ -1,6 +1,6 @@
 ﻿namespace TokoSepatuApp.View.FormUsers
 {
-    partial class FormAddUpdateBrands
+    partial class FormAddUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -119,6 +119,8 @@
             this.Controls.Add(this.textName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSimpan);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAddUsers";
             this.Text = "Form Add Users";
             this.ResumeLayout(false);

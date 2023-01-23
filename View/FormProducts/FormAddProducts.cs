@@ -61,6 +61,9 @@ namespace TokoSepatuApp.View.FormProducts
             textName.Clear();
             textHarga.Clear();
             textPhoto.Clear();
+
+            pictureBox1.Image = null;
+
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

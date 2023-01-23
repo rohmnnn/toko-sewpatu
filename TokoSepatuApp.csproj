@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -88,10 +88,10 @@
     <Compile Include="Controller\OrdersController.cs" />
     <Compile Include="Controller\ProductsController.cs" />
     <Compile Include="Controller\UsersController.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Context\DbContext.cs" />
@@ -136,9 +136,9 @@
     <Compile Include="View\FormOrders\FormOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="View\FormOrders\FormOrders.Designer.cs">
-		  <DependentUpon>FormOrders.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="View\FormOrders\FormOrders.Designer.cs">
+      <DependentUpon>FormOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,7 +181,7 @@
     <Compile Include="View\FormUsers\FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -207,7 +207,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormOrders\FormOrders.resx">
       <DependentUpon>FormOrders.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

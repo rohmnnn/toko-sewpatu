@@ -56,10 +56,10 @@ namespace TokoSepatuApp.View.FormUsers
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //var formAddUser = new FormAddUsers();
-            //formAddUser.onCreate += onCreate;
+            var formAddUser = new FormAddUsers();
+            formAddUser.onCreate += onCreate;
 
-            //formAddUser.ShowDialog();
+            formAddUser.ShowDialog();
         }
 
         private void onCreate(Users users)

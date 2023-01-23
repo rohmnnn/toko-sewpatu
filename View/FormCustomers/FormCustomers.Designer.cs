@@ -105,6 +105,8 @@
             this.Controls.Add(this.textCari);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.title);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCustomers";
             this.Text = "Form Customers";
             this.ResumeLayout(false);
