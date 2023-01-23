@@ -47,14 +47,21 @@ namespace TokoSepatuApp.Model.Repository
         public int Update(Products products, string id)
         {
             int result = 0;
-            string sql = @"update products set name = @name, brand_id = @brand_id, price = @price, photo = @photo where id == @id";
+            string sql = @"update products set name = @name, brand_id = @brand_id, price = @price where id == @id";
+            if (!string.IsNullOrEmpty(products.Photo))
+            {
+                sql = @"update products set name = @name, brand_id = @brand_id, price = @price, photo = @photo where id == @id";
+            }
 
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
                 cmd.Parameters.AddWithValue("@name", products.Name);
                 cmd.Parameters.AddWithValue("@brand_id", products.BrandId);
                 cmd.Parameters.AddWithValue("@price", products.Price);
-                cmd.Parameters.AddWithValue("@photo", products.Photo);
+                if (!string.IsNullOrEmpty(products.Photo))
+                {
+                    cmd.Parameters.AddWithValue("@photo", products.Photo);
+                }
                 cmd.Parameters.AddWithValue("@id", id);
                 try
                 {
@@ -182,7 +189,7 @@ namespace TokoSepatuApp.Model.Repository
             List<Products> list = new List<Products>();
             try
             {
-                string sql = @" select products.id, products.name, products.price, products.photo, brands.name as brand from products left join brands on products.brand_id = brands.id where products.name like @param";
+                string sql = @"select products.id, products.name, products.price, products.brand_id, products.photo, brands.name as brand from products left join brands on products.brand_id = brands.id where products.name like @param";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
                     cmd.Parameters.AddWithValue("@param", string.Format("%{0}%", param));

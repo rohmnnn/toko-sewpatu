@@ -40,11 +40,13 @@
             this.comboBoxBrand = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textPhoto = new System.Windows.Forms.TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSimpan
             // 
-            this.btnSimpan.Location = new System.Drawing.Point(12, 207);
+            this.btnSimpan.Location = new System.Drawing.Point(12, 267);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(75, 23);
             this.btnSimpan.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(93, 207);
+            this.btnCancel.Location = new System.Drawing.Point(93, 267);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
@@ -111,6 +113,7 @@
             this.btnBrowse.TabIndex = 8;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // label4
             // 
@@ -141,11 +144,21 @@
             this.textPhoto.Size = new System.Drawing.Size(254, 20);
             this.textPhoto.TabIndex = 11;
             // 
-            // FormAddProducts
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(12, 195);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(75, 66);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 12;
+            this.pictureBox.TabStop = false;
+            // 
+            // FormUpdateProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 242);
+            this.ClientSize = new System.Drawing.Size(374, 302);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.textPhoto);
             this.Controls.Add(this.comboBoxBrand);
             this.Controls.Add(this.label4);
@@ -157,8 +170,9 @@
             this.Controls.Add(this.textName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSimpan);
-            this.Name = "FormAddProducts";
-            this.Text = "Form Add Products";
+            this.Name = "FormUpdateProducts";
+            this.Text = "Form Update Products";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +192,6 @@
         private System.Windows.Forms.ComboBox comboBoxBrand;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textPhoto;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

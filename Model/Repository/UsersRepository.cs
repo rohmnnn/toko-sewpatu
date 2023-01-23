@@ -20,6 +20,31 @@ namespace TokoSepatuApp.Model.Repository
             _conn = context.Conn;
         }
 
+        public bool IsValidUser(string email, string password)
+        {
+            bool result = false;
+
+            string sql = @"select count(*) as row_count
+                           from users
+                           where email = @email and password = @password";
+
+            using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                {
+                    if (dtr.Read())
+                    {
+                        result = Convert.ToInt32(dtr["row_count"]) > 0;
+                    }
+                }
+            }
+
+            return result;
+        }
+
         public int Create(Users user)
         {
             int result = 0;

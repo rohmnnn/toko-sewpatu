@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.IO;
+using System.Windows.Forms;
 
 namespace TokoSepatuApp.Model.Context
 {
@@ -22,8 +24,7 @@ namespace TokoSepatuApp.Model.Context
             SQLiteConnection conn = null;
             try 
             {
-                string dbName = @"D:\toko-sewpatu\Database\db_tokosepatu.sqlite";
-
+                string dbName = Directory.GetCurrentDirectory() + @"\Database\db_tokosepatu.sqlite";
                 string connectionString = string.Format("DataSource={0}; FailIfMissing = True", dbName);
                 conn = new SQLiteConnection(connectionString); 
                 conn.Open();

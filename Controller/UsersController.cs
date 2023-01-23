@@ -14,6 +14,38 @@ namespace TokoSepatuApp.Controller
     {
         private UsersRepository _repository;
 
+        public bool IsValidUser(string email, string password)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Email harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Password harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            bool isValidUser = false;
+
+            using (DbContext context = new DbContext())
+            {
+                _repository = new UsersRepository(context);
+
+                isValidUser = _repository.IsValidUser(email, password);
+            }
+
+            if (!isValidUser)
+            {
+                MessageBox.Show("Data user tidak ditemukan!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return false;
+            }
+
+            return true;
+        }
         public int Create(Users users)
         {
             int result = 0;

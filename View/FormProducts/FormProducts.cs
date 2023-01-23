@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TokoSepatuApp.Model.Entity;
 using TokoSepatuApp.Controller;
-using System.Diagnostics;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Globalization;
 using System.IO;
 
 namespace TokoSepatuApp.View.FormProducts
@@ -23,7 +20,6 @@ namespace TokoSepatuApp.View.FormProducts
         public FormProducts()
         {
             InitializeComponent();
-            InisialisasiListView();
             controller = new ProductsController();
 
             LoadProducts();
@@ -31,42 +27,21 @@ namespace TokoSepatuApp.View.FormProducts
 
         public void LoadProducts()
         {
-            listView.Items.Clear();
             listOfUsers = controller.ReadAll();
-
+            dataGridView.Rows.Clear();
             foreach (var product in listOfUsers)
             {
-                var noUrut = listView.Items.Count + 1;
-                var item = new ListViewItem(noUrut.ToString());
-
                 if(!string.IsNullOrEmpty(product.Photo))
                 {
-                    ImageList images = new ImageList();
-                    images.Images.Add(product.Id.ToString(), Image.FromFile(product.Photo.ToString()));
-                    listView.LargeImageList = images;
+                    dataGridView.Rows.Add(product.Id, product.Name, product.Brand, new Bitmap(product.Photo.ToString()));
                 }
-
-                item.Tag = product.Id;
-                item.SubItems.Add(product.Name);
-                item.SubItems.Add(product.Brand);
-                item.SubItems.Add(product.Price.ToString("C", CultureInfo.CurrentCulture));
-                item.ImageKey = product.Id.ToString();
-                item.ImageIndex = noUrut - 1;
-
-                listView.Items.Add(item);
+                else
+                {
+                    string defaultImg = Directory.GetCurrentDirectory() + @"\Images\default.png";
+                    dataGridView.Rows.Add(product.Id, product.Name, product.Brand, new Bitmap(defaultImg));
+                }
             }
 
-        }
-
-        private void InisialisasiListView()
-        {
-            listView.View = System.Windows.Forms.View.Details;
-            listView.FullRowSelect = true;
-            listView.GridLines = true;
-            listView.Columns.Add("No.", 35, HorizontalAlignment.Center);
-            listView.Columns.Add("Nama", 250, HorizontalAlignment.Left);
-            listView.Columns.Add("Brand", 120, HorizontalAlignment.Left);
-            listView.Columns.Add("Price", 120, HorizontalAlignment.Left);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -85,7 +60,12 @@ namespace TokoSepatuApp.View.FormProducts
 
         private void onUpdate(Products users)
         {
-            string id = listView.SelectedItems[0].Tag.ToString();
+            dataGridView.SelectedRows.ToString();
+            string id = "";
+            foreach (DataGridViewRow row in dataGridView.SelectedRows)
+            {
+                id = row.Cells[0].Value.ToString();
+            }
 
             controller.Update(users, id);
             LoadProducts();
@@ -93,17 +73,22 @@ namespace TokoSepatuApp.View.FormProducts
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (listView.SelectedItems.Count > 0)
+            string id = "";
+            foreach (DataGridViewRow row in dataGridView.SelectedRows)
+            {
+                id = row.Cells[0].Value.ToString();
+            }
+
+            if (!string.IsNullOrEmpty(id))
             {
                 var konfirmasi = MessageBox.Show("Data akan dihapus? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (konfirmasi == DialogResult.Yes)
                 {
-                    string id = listView.SelectedItems[0].Tag.ToString();
                     var result = controller.Delete(id);
                     if (result > 0) LoadProducts();
                 }
-            }
-            else // data belum dipilih
+            } 
+            else
             {
                 MessageBox.Show("Data tidak ditemukan!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -112,9 +97,15 @@ namespace TokoSepatuApp.View.FormProducts
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (listView.SelectedItems.Count > 0)
+            string id = "";
+            foreach (DataGridViewRow row in dataGridView.SelectedRows)
             {
-                Products users = listOfUsers[listView.SelectedIndices[0]];
+                id = row.Cells[0].Value.ToString();
+            }
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                Products users = listOfUsers[dataGridView.CurrentCell.RowIndex];
 
                 var formUpdateProduct = new FormUpdateProducts(users);
                 formUpdateProduct.onUpdate += onUpdate;
@@ -130,20 +121,19 @@ namespace TokoSepatuApp.View.FormProducts
 
         private void btnCari_Click(object sender, EventArgs e)
         {
-            listView.Items.Clear();
             listOfUsers = controller.Search(textCari.Text);
-
+            dataGridView.Rows.Clear();
             foreach (var product in listOfUsers)
             {
-                var noUrut = listView.Items.Count + 1;
-                var item = new ListViewItem(noUrut.ToString());
-
-                item.Tag = product.Id;
-                item.SubItems.Add(product.Name);
-                item.SubItems.Add(product.Brand);
-                item.SubItems.Add(String.Format(CultureInfo.CreateSpecificCulture("id-id"), "{0:N}", product.Price.ToString()));
-
-                listView.Items.Add(item);
+                if (!string.IsNullOrEmpty(product.Photo))
+                {
+                    dataGridView.Rows.Add(product.Id, product.Name, product.Brand, new Bitmap(product.Photo.ToString()));
+                }
+                else
+                {
+                    string defaultImg = Directory.GetCurrentDirectory() + @"\Images\default.png";
+                    dataGridView.Rows.Add(product.Id, product.Name, product.Brand, new Bitmap(defaultImg));
+                }
             }
         }
 

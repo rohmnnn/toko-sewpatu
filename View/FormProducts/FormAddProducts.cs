@@ -53,7 +53,7 @@ namespace TokoSepatuApp.View.FormProducts
             products.Name = textName.Text;
             products.Price = Convert.ToInt32(textHarga.Text);
             products.BrandId = Convert.ToInt32(comboBoxBrand.SelectedValue.ToString());
-            products.Photo = textPhoto.Text;
+            products.File = textPhoto.Text;
 
 
             onCreate(products);
