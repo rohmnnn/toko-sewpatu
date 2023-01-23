@@ -15,5 +15,6 @@ namespace TokoSepatuApp.Model.Entity
         public int Price { get; set; }
         public string Photo { get; set; }
         public string File { get; set; }
+        public string Size { get; set; }
     }
 }

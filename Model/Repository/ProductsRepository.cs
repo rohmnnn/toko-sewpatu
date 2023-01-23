@@ -94,6 +94,33 @@ namespace TokoSepatuApp.Model.Repository
             return result;
         }
 
+        public int DetailPrice(int id)
+        {
+            int result = 0;
+            string sql = @"select price from product_sizes 
+                        INNER JOIN products ON products.id = product_sizes.product_id
+                        where product_sizes.id == @id";
+            using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                try
+                {
+                    using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            result = Convert.ToInt32(dtr["price"]);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Detail price error: {0}", ex.Message);
+                }
+            }
+            return result;
+        }
+
         public List<Products> ReadAll()
         {
             List<Products> list = new List<Products>();
@@ -113,6 +140,37 @@ namespace TokoSepatuApp.Model.Repository
                             products.BrandId = Convert.ToInt32(dtr["brand_id"]);
                             products.Photo = dtr["photo"].ToString();
                             products.Brand = dtr["brand"].ToString();
+
+                            list.Add(products);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll error: {0}", ex.Message);
+            }
+            return list;
+        }
+
+        public List<Products> ReadAllSizes()
+        {
+            List<Products> list = new List<Products>();
+            try
+            {
+                string sql = @"select products.name, product_sizes.*
+                            from product_sizes
+                            inner join products on products.id = product_sizes.product_id";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+                {
+                    using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            Products products = new Products();
+                            products.Id = Convert.ToInt32(dtr["id"]);
+                            products.Name = dtr["name"].ToString();
+                            products.Size = dtr["size"].ToString();
 
                             list.Add(products);
                         }
