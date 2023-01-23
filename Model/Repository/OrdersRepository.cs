@@ -24,7 +24,7 @@ namespace TokoSepatuApp.Model.Repository
         {
             int result = 0;
             string sql = @"insert into orders (order_no, date, customer_id, total) values ('INV'||strftime('%Y%m%d%H%M%s'), datetime(), @customer_id, @total)";
-            string sqlDetail = @"insert into order_detail (order_id, product_size_id, amount, total) values (@order_id, @product_size_id, @amount, @total)";
+            string sqlDetail = @"insert into order_details (order_id, product_size_id, amount, total) values (@order_id, @product_size_id, @amount, @total)";
 
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
