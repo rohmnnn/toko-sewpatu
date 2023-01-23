@@ -98,7 +98,7 @@ namespace TokoSepatuApp.Model.Repository
         {
             int result = 0;
             string sql = @"select price from product_sizes 
-                        INNER JOIN products ON products.id = product_sizes.id
+                        INNER JOIN products ON products.id = product_sizes.product_id
                         where product_sizes.id == @id";
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
