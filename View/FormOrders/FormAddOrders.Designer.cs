@@ -33,10 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textHarga = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textCustomerName = new System.Windows.Forms.TextBox();
+            this.textCustomerAddress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSimpan
@@ -62,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 58);
+            this.label2.Location = new System.Drawing.Point(12, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 4;
@@ -71,7 +73,7 @@
             // comboBoxProduct
             // 
             this.comboBoxProduct.FormattingEnabled = true;
-            this.comboBoxProduct.Location = new System.Drawing.Point(12, 74);
+            this.comboBoxProduct.Location = new System.Drawing.Point(12, 35);
             this.comboBoxProduct.Name = "comboBoxProduct";
             this.comboBoxProduct.Size = new System.Drawing.Size(206, 21);
             this.comboBoxProduct.TabIndex = 10;
@@ -80,27 +82,19 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // comboBoxCustomer
-            // 
-            this.comboBoxCustomer.FormattingEnabled = true;
-            this.comboBoxCustomer.Location = new System.Drawing.Point(12, 32);
-            this.comboBoxCustomer.Name = "comboBoxCustomer";
-            this.comboBoxCustomer.Size = new System.Drawing.Size(206, 21);
-            this.comboBoxCustomer.TabIndex = 12;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(10, 133);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Customer";
+            this.label1.Text = "Nama Customer";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 104);
+            this.label3.Location = new System.Drawing.Point(12, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 5;
@@ -108,17 +102,42 @@
             // 
             // textHarga
             // 
-            this.textHarga.Location = new System.Drawing.Point(12, 121);
+            this.textHarga.Location = new System.Drawing.Point(12, 82);
             this.textHarga.Name = "textHarga";
             this.textHarga.Size = new System.Drawing.Size(206, 20);
             this.textHarga.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Alamat";
+            // 
+            // textCustomerName
+            // 
+            this.textCustomerName.Location = new System.Drawing.Point(12, 150);
+            this.textCustomerName.Name = "textCustomerName";
+            this.textCustomerName.Size = new System.Drawing.Size(327, 20);
+            this.textCustomerName.TabIndex = 13;
+            // 
+            // textCustomerAddress
+            // 
+            this.textCustomerAddress.Location = new System.Drawing.Point(12, 195);
+            this.textCustomerAddress.Name = "textCustomerAddress";
+            this.textCustomerAddress.Size = new System.Drawing.Size(327, 20);
+            this.textCustomerAddress.TabIndex = 14;
             // 
             // FormAddOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 349);
-            this.Controls.Add(this.comboBoxCustomer);
+            this.Controls.Add(this.textCustomerAddress);
+            this.Controls.Add(this.textCustomerName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.textHarga);
@@ -142,9 +161,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ComboBox comboBoxCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textHarga;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textCustomerName;
+        private System.Windows.Forms.TextBox textCustomerAddress;
     }
 }

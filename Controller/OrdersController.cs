@@ -14,7 +14,7 @@ namespace TokoSepatuApp.Controller
     {
         private OrdersRepository _repository;
 
-        public int Create(Orders orders, OrderDetails orderDetails)
+        public int Create(Orders orders, OrderDetails orderDetails, Customers customers)
         {
             int result = 0;
             if (string.IsNullOrEmpty(orders.CustomerId.ToString()))
@@ -41,7 +41,7 @@ namespace TokoSepatuApp.Controller
             using (DbContext context = new DbContext())
             {
                 _repository = new OrdersRepository(context);
-                result = _repository.Create(orders, orderDetails);
+                result = _repository.Create(orders, orderDetails, customers);
             }
 
             if (result > 0)

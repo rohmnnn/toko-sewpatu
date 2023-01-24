@@ -16,7 +16,7 @@ namespace TokoSepatuApp.View.FormOrders
 {
     public partial class FormAddOrders : Form
     {
-        public delegate void CreateEventHandler(Orders orders, OrderDetails orderDetails);
+        public delegate void CreateEventHandler(Orders orders, OrderDetails orderDetails, Customers customers);
         public event CreateEventHandler onCreate;
 
         private List<Products> listOfProducts = new List<Products>();
@@ -32,30 +32,16 @@ namespace TokoSepatuApp.View.FormOrders
             comboBoxProduct.DisplayMember = "Text";
             comboBoxProduct.ValueMember = "Value";
 
-            comboBoxCustomer.Items.Clear();
-            comboBoxCustomer.DisplayMember = "Text";
-            comboBoxCustomer.ValueMember = "Value";
-
             listOfProducts = productController.ReadAllSizes();
             List<Object> itemsProduct = new List<Object>();
-
-            listOfCustomers = customerController.ReadAll();
-            List<Object> itemsCustomer = new List<Object>();
 
             foreach (var product in listOfProducts)
             {
                 itemsProduct.Add(new { Text = product.Name + " - " + product.Size, Value = product.Id });
             }
 
-            foreach (var customer in listOfCustomers)
-            {
-                itemsCustomer.Add(new { Text = customer.Name, Value = customer.Id });
-            }
 
             comboBoxProduct.DataSource = itemsProduct;
-            comboBoxCustomer.DataSource = itemsCustomer;
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,9 +53,8 @@ namespace TokoSepatuApp.View.FormOrders
         {
             var orders = new Orders();
             var orderDetail = new OrderDetails();
+            var customer = new Customers();
 
-
-            orders.CustomerId = Convert.ToInt32(comboBoxCustomer.SelectedValue.ToString());
             orderDetail.ProductIdSize = Convert.ToInt32(comboBoxProduct.SelectedValue.ToString());
             orderDetail.Amount = Convert.ToInt32(textHarga.Text);
 
@@ -81,11 +66,14 @@ namespace TokoSepatuApp.View.FormOrders
             orders.Total = Convert.ToInt32(total);
             orderDetail.Total = Convert.ToInt32(total);
 
+            customer.Name = textCustomerName.Text;
+            customer.Address = textCustomerAddress.Text;
+
 
             var konfirmasi = MessageBox.Show("Total Harga :  Rp." + total, "Konfirmasi Pembayaran", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (konfirmasi == DialogResult.Yes)
             {
-                onCreate(orders, orderDetail);
+                onCreate(orders, orderDetail, customer);
 
             } else // data belum dipilih
             {

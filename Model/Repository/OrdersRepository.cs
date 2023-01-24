@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +22,43 @@ namespace TokoSepatuApp.Model.Repository
 
         // TODO : check stock + perhitungan harga
 
-        public int Create(Orders orders, OrderDetails orderDetails)
+        public int Create(Orders orders, OrderDetails orderDetails, Customers customers)
         {
             int result = 0;
+            string sqlCustomer = @"insert into customers (name, address) values (@name, @address)";
             string sql = @"insert into orders (order_no, date, customer_id, total) values ('INV'||strftime('%Y%m%d%H%M%s'), datetime(), @customer_id, @total)";
             string sqlDetail = @"insert into order_details (order_id, product_size_id, amount, total) values (@order_id, @product_size_id, @amount, @total)";
+            string customerId = null;
+            string sqlGetId = @"select last_insert_rowid()";
+
+            if (!string.IsNullOrEmpty(customers.Name) && !string.IsNullOrEmpty(customers.Address))
+            {
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlCustomer, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", customers.Name);
+                    cmd.Parameters.AddWithValue("@address", customers.Address);
+                    try
+                    {
+                        result = cmd.ExecuteNonQuery();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                    }
+                }
+
+
+                using (SQLiteCommand cmdId = new SQLiteCommand(sqlGetId, _conn))
+                {
+                    customerId = cmdId.ExecuteScalar().ToString();
+                }
+            }
+
 
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@customer_id", orders.CustomerId);
+                cmd.Parameters.AddWithValue("@customer_id", customerId);
                 cmd.Parameters.AddWithValue("@total", orders.Total);
                 try
                 {
@@ -42,12 +71,9 @@ namespace TokoSepatuApp.Model.Repository
                 }
             }
 
-
-            string sqlGetId = @"select last_insert_rowid()";
             using (SQLiteCommand cmdId = new SQLiteCommand(sqlGetId, _conn))
             {
                 long lastId = (long)cmdId.ExecuteScalar();
-                MessageBox.Show(lastId.ToString());
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sqlDetail, _conn))
                 {

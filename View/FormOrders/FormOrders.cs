@@ -67,9 +67,9 @@ namespace TokoSepatuApp.View.FormOrders
             formAddOrder.ShowDialog();
         }
 
-        private void onCreate(Orders orders, OrderDetails orderDetails)
+        private void onCreate(Orders orders, OrderDetails orderDetails, Customers customers)
         {
-            controller.Create(orders, orderDetails);
+            controller.Create(orders, orderDetails, customers);
             LoadOrders();
         }
 
