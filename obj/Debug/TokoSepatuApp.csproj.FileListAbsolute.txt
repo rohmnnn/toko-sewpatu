@@ -90,3 +90,4 @@ D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.exe
 D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.pdb
 D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProductSizes.FormAddUpdateProductSizes.resources
 D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProductSizes.FormProductSizes.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormReport.resources

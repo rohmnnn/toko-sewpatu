@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TokoSepatuApp.View;
 using TokoSepatuApp.View.FormBrands;
 using TokoSepatuApp.View.FormCustomers;
 using TokoSepatuApp.View.FormOrders;
@@ -57,6 +58,12 @@ namespace TokoSepatuApp
         {
             var formProductSize = new FormProductSizes();
             formProductSize.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var formReport = new FormReport();
+            formReport.ShowDialog();
         }
     }
 }

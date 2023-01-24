@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TokoSepatuApp.Model.Context;
 using TokoSepatuApp.Model.Entity;
 
@@ -46,6 +47,7 @@ namespace TokoSepatuApp.Model.Repository
             using (SQLiteCommand cmdId = new SQLiteCommand(sqlGetId, _conn))
             {
                 long lastId = (long)cmdId.ExecuteScalar();
+                MessageBox.Show(lastId.ToString());
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sqlDetail, _conn))
                 {
