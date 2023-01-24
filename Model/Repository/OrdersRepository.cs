@@ -47,7 +47,6 @@ namespace TokoSepatuApp.Model.Repository
             using (SQLiteCommand cmdId = new SQLiteCommand(sqlGetId, _conn))
             {
                 long lastId = (long)cmdId.ExecuteScalar();
-                MessageBox.Show(lastId.ToString());
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sqlDetail, _conn))
                 {
