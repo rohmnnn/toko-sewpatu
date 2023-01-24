@@ -87,7 +87,21 @@
     <Compile Include="Controller\BrandsController.cs" />
     <Compile Include="Controller\OrdersController.cs" />
     <Compile Include="Controller\ProductsController.cs" />
+    <Compile Include="Controller\ProductSizesController.cs" />
     <Compile Include="Controller\UsersController.cs" />
+    <Compile Include="Model\Repository\ProductSizesRepository.cs" />
+    <Compile Include="View\FormProductSizes\FormAddUpdateProductSizes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormProductSizes\FormAddUpdateProductSizes.Designer.cs">
+      <DependentUpon>FormAddUpdateProductSizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormProductSizes\FormProductSizes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormProductSizes\FormProductSizes.Designer.cs">
+      <DependentUpon>FormProductSizes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +195,12 @@
     <Compile Include="View\FormUsers\FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormProductSizes\FormAddUpdateProductSizes.resx">
+      <DependentUpon>FormAddUpdateProductSizes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormProductSizes\FormProductSizes.resx">
+      <DependentUpon>FormProductSizes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

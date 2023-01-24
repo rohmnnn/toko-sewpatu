@@ -43,6 +43,24 @@ D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSe
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormOrders.FormAddOrders.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormOrders.FormOrders.resources
 D:\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\visualstudio\TokoSepatuApp\obj\Debug\TokoSepatuApp.View.FormUsers.FormAddUsers.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.AssemblyReference.cache
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.SuggestedBindingRedirects.cache
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.MainForm.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.Properties.Resources.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormCustomers.FormCustomers.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormBrands.FormAddUpdateBrands.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormBrands.FormBrands.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormOrders.FormAddOrders.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormOrders.FormOrders.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormLogin.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProducts.FormUpdateProducts.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProducts.FormAddProducts.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProducts.FormProducts.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormUsers.FormUpdateUsers.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormUsers.FormAddUsers.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormUsers.FormUsers.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.GenerateResource.cache
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.CoreCompileInputs.cache
 D:\2. Kampus\toko-sewpatu\bin\Debug\TokoSepatuApp.exe.config
 D:\2. Kampus\toko-sewpatu\bin\Debug\TokoSepatuApp.exe
 D:\2. Kampus\toko-sewpatu\bin\Debug\TokoSepatuApp.pdb
@@ -67,24 +85,8 @@ D:\2. Kampus\toko-sewpatu\bin\Debug\System.Data.SQLite.xml
 D:\2. Kampus\toko-sewpatu\bin\Debug\System.Memory.xml
 D:\2. Kampus\toko-sewpatu\bin\Debug\System.Numerics.Vectors.xml
 D:\2. Kampus\toko-sewpatu\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.AssemblyReference.cache
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.SuggestedBindingRedirects.cache
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.MainForm.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.Properties.Resources.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormCustomers.FormCustomers.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormBrands.FormAddUpdateBrands.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormBrands.FormBrands.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormOrders.FormAddOrders.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormOrders.FormOrders.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormLogin.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProducts.FormUpdateProducts.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProducts.FormAddProducts.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProducts.FormProducts.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormUsers.FormUpdateUsers.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormUsers.FormAddUsers.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormUsers.FormUsers.resources
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.GenerateResource.cache
-D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.CoreCompileInputs.cache
 D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.csproj.CopyComplete
 D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.exe
 D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.pdb
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProductSizes.FormAddUpdateProductSizes.resources
+D:\2. Kampus\toko-sewpatu\obj\Debug\TokoSepatuApp.View.FormProductSizes.FormProductSizes.resources

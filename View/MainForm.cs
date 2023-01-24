@@ -11,6 +11,7 @@ using TokoSepatuApp.View.FormBrands;
 using TokoSepatuApp.View.FormCustomers;
 using TokoSepatuApp.View.FormOrders;
 using TokoSepatuApp.View.FormProducts;
+using TokoSepatuApp.View.FormProductSizes;
 using TokoSepatuApp.View.FormUsers;
 
 namespace TokoSepatuApp
@@ -50,6 +51,12 @@ namespace TokoSepatuApp
         {
             var formOrders = new FormOrders();
             formOrders.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var formProductSize = new FormProductSizes();
+            formProductSize.ShowDialog();
         }
     }
 }
