@@ -53,7 +53,7 @@ namespace TokoSepatuApp.Controller
 
                 File.Copy(products.File, fileSavePath, true);
 
-                products.Photo = fileSavePath;
+                products.Photo = @"\Images\" + fileName;
             }
 
             using (DbContext context = new DbContext())
