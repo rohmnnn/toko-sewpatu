@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +50,8 @@ namespace TokoSepatuApp.View.FormProducts
             textPhoto.Text = products.Photo;
             if (!string.IsNullOrEmpty(products.Photo))
             {
-                pictureBox.Image = new Bitmap(products.Photo);
+                string imgPath = Directory.GetCurrentDirectory() + products.Photo;
+                pictureBox.Image = new Bitmap(imgPath);
             }
         }
 
