@@ -51,7 +51,7 @@ namespace TokoSepatuApp.Model.Repository
             List<Customers> list = new List<Customers>();
             try
             {
-                string sql = @"select id, name, email, phone, address from customers where name like @param order by name";
+                string sql = @"select id, name, address from customers where name like @param order by name";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
                     cmd.Parameters.AddWithValue("@param", string.Format("%{0}%", param));
@@ -59,11 +59,11 @@ namespace TokoSepatuApp.Model.Repository
                     {
                         while (dtr.Read())
                         {
-                            Customers brand = new Customers();
-                            brand.Id = Convert.ToInt32(dtr["id"]);
-                            brand.Name = dtr["name"].ToString();
-                            brand.Address = dtr["address"].ToString();
-                            list.Add(brand);
+                            Customers customer = new Customers();
+                            customer.Id = Convert.ToInt32(dtr["id"]);
+                            customer.Name = dtr["name"].ToString();
+                            customer.Address = dtr["address"].ToString();
+                            list.Add(customer);
                         }
                     }
                 }

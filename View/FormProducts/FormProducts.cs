@@ -128,7 +128,8 @@ namespace TokoSepatuApp.View.FormProducts
             {
                 if (!string.IsNullOrEmpty(product.Photo))
                 {
-                    dataGridView.Rows.Add(product.Id, product.Name, product.Brand, new Bitmap(product.Photo.ToString()));
+                    string imgPath = Directory.GetCurrentDirectory() + product.Photo;
+                    dataGridView.Rows.Add(product.Id, product.Name, product.Brand, new Bitmap(imgPath));
                 }
                 else
                 {
